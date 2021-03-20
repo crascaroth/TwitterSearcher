@@ -1,10 +1,12 @@
 import MainPage from './Pages/MainPage/MainPage'
-
+import Provider from './GlobalState/Provider'
 
 function App() {
-  return (    
-    <MainPage/>
-    );
+  return (
+    <Provider>
+      <MainPage />
+    </Provider>
+  );
 }
 
 export default App;
