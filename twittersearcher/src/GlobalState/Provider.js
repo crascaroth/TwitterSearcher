@@ -12,11 +12,11 @@ const Provider = (props) => {
     const consumer_secret1 = "goBIkSFc3fZppYzzWO30HQZqK6fVj1g8yuC1AinuzmRUy0vw0j"
 
 
-    const concatenate = "pzj1Me9iFE4pHRmglbniMWqGi:goBIkSFc3fZppYzzWO30HQZqK6fVj1g8yuC1AinuzmRUy0vw0j"
-    const concatenatebase64 = "cHpqMU1lOWlGRTRwSFJtZ2xibmlNV3FHaTpnb0JJa1NGYzNmWnBwWXp6V08zMEhRWnFLNmZWajFnOHl1QzFBaW51em1SVXkwdncwag=="
-    const access_token1 = "1371949600597282817-4ROmk8s48GXv96ETv0kuotRO8xTfbf"
-    const token_secret1 = "AmAUlIFm2CmqpM0pXjbNtrU49JVWXnLd2FIBCVrl3oQzw"
-
+    const apikey = 'IpBuBG1C2JSTDPJa877RX53tm'
+    const apiSecretKey = 'Xrf5GZywh5MbBeM5DIwr7dL7skAANf6QIXep0WMKw7C14OzHzQ'
+    const accessToken = '1371949600597282817-iojfgPT5lT86K5Vsg4wiSJXchFDJLI'
+    const accessTokenSecret = 'twz4f4jRHe1vRnUOw31QFbOJEk5CzJsreLpOHkab95XLj'
+    
 
 
     const onChange = (event) => {
@@ -26,29 +26,30 @@ const Provider = (props) => {
 
     const searchTweet = async () => {
 
-        const Twitter = require('twitter')
+        const Twitter = require('twit')
 
         const newTwit = new Twitter({
-            consumer_key: consumer_key1,
-            consumer_secret: consumer_secret1,
-            access_token: access_token1,
-            access_token_secret: token_secret1
+            consumer_key: apikey,
+            consumer_secret: apiSecretKey,
+            access_token: accessToken,
+            access_token_secret: accessTokenSecret,
+            timeout_ms:60*1000,
+            strictSSL: true
         })
         
-        const params = {screen_name: 'nodejs'};
-        newTwit.get('statuses/user_timeline', params, function (error, tweets, response) {
-            if (!error) {
-                console.log(tweets);
-            }
-        });
+        try {
+            const params = {q: 'banana since:2020-07-11', count: 100}
+            const res = await newTwit.get('search/tweets', params, function(error, tweets, response){
+                console.log(tweets)
+            })
 
-        // try {
-        //     const response = await newTwit.get(`${BASE_URL}tweets/search/recent?query=asus`, newTwit)
-        //     console.log(`${BASE_URL}tweets/search/recent?query=${searchWord}`)
-        //     console.log(response)
-        // } catch (error) {
-        //     console.log(error)
-        // }
+        } catch (error) {
+            console.log("nao deu bom")
+        }
+        
+    
+
+
 
     }
 
