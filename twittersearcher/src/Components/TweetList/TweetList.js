@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import Context from '../../GlobalState/Context'
-import { Title, Text, Card, Container } from './TweetList_styles'
+import { Title, Text, Card, Container, Welcome } from './TweetList_styles'
 
 const TweetList = () => {
     const { states, setters, requests } = useContext(Context)
@@ -11,12 +11,14 @@ const TweetList = () => {
 
     }, [states.tweetListVar])
 
-
-
-
-
-
-    
+    if (states.searchWord === null || states.searchWord === undefined || states.searchWord === "") {
+        return(
+            <Container>
+                <Welcome>Welcome! Please, insert a Word</Welcome>
+            </Container>
+        )
+    }
+    else {
         return (
             <Container>
                 {
@@ -34,9 +36,9 @@ const TweetList = () => {
                 }
             </Container>
         )
-    
-   
 
+
+    }
 }
 
 export default TweetList

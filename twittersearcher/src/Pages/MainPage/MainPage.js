@@ -25,6 +25,7 @@ const MainPage = () => {
                 <Button onClick={requests.searchTweet}>Search</Button>
 
             </TopContainer>
+            
             <TweetList />
         </>
     )

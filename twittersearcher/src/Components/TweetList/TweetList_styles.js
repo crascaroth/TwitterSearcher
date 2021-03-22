@@ -31,3 +31,16 @@ flex-direction:column;
 align-items: center;
 justify-content:center;
 `
+
+export const Welcome = styled.div`
+font-size: 12vh;
+display:flex;
+justify-content:center;
+align-items: center;
+background-color: #d3e0e3;
+border-radius: 15%;
+width: 80%;
+height: 100%;
+margin: 20vh 10vw;
+padding: 5vh;
+`
