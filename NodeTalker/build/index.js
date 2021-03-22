@@ -28,7 +28,7 @@ app.get('/gettweet/:word', (req, resGeneral) => {
     let searchWord;
     searchWord = req.params.word;
     try {
-        const params = { q: searchWord + " since:2011-07-11", count: 3 };
+        const params = { q: searchWord + " since:2011-07-11", count: 10 };
         const res = newTwit.get('/search/tweets', params, function (error, tweets, response) {
             resGeneral.send(tweets);
         });

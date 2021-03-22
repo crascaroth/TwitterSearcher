@@ -35,11 +35,12 @@ const newTwit = new Twit({
   timeout_ms: 60 * 1000,
   strictSSL: true
 })
+
 app.get('/gettweet/:word', (req: Request, resGeneral: Response) => {
   let searchWord: any
   searchWord = req.params.word
   try {
-    const params = { q: searchWord + " since:2011-07-11", count: 3 }
+    const params = { q: searchWord + " since:2011-07-11", count: 10 }
     const res = newTwit.get('/search/tweets', params, function (error: any, tweets: any, response: Response) {
 
 
