@@ -24,3 +24,10 @@ background-color: #d3e0e3;
 font-size: 10vh;
 border-radius: 1vh;
 `
+            
+export const Container  = styled.div`
+display:flex;
+flex-direction:column;
+align-items: center;
+justify-content:center;
+`

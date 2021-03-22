@@ -22,7 +22,7 @@ const MainPage = () => {
                     placeholder="Hashtag"
                 />
 
-                <Button onClick={requests.searchTweet}>clique em mim</Button>
+                <Button onClick={requests.searchTweet}>Search</Button>
 
             </TopContainer>
             <TweetList />

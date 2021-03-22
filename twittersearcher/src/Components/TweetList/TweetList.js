@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import Context from '../../GlobalState/Context'
-import { Title, Text, Card, NoTweets } from './TweetList_styles'
+import { Title, Text, Card, Container } from './TweetList_styles'
 
 const TweetList = () => {
     const { states, setters, requests } = useContext(Context)
@@ -18,7 +18,7 @@ const TweetList = () => {
 
     
         return (
-            <>
+            <Container>
                 {
                     states.tweetListVar &&
                     states.tweetListVar.map((t) => {
@@ -32,7 +32,7 @@ const TweetList = () => {
                     })
 
                 }
-            </>
+            </Container>
         )
     
    
