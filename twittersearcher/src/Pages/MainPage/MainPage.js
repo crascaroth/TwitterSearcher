@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { useEffect } from 'react/cjs/react.production.min'
 import TweetList from '../../Components/TweetList/TweetList'
 import Context from '../../GlobalState/Context.js'
 import { Title, Input, Button, TopContainer } from './MainPage_styles'
@@ -7,6 +8,7 @@ import { Title, Input, Button, TopContainer } from './MainPage_styles'
 const MainPage = () => {
     const { states, setters, requests } = useContext(Context)
 
+    
 
 
     return (
