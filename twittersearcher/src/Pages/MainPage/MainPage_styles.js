@@ -24,8 +24,11 @@ margin-bottom: 1vh;
 
 export const Button = styled.button`
 width: 40vw;
-height: 2.5vh;
+height: 4vh;
+font-size: 3vh;
 outline: none;
+background-color: #36D8FF;
+
 `
 
 export const TopContainer = styled.div`
