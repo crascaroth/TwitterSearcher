@@ -6,6 +6,7 @@ import cors from 'cors';
 
 //extra: importando configuração de rede do node
 import { AddressInfo } from "net";
+
 //iniciando a aplicação web com express
 const app = express();
 
@@ -34,15 +35,31 @@ const newTwit = new Twit({
   timeout_ms: 60 * 1000,
   strictSSL: true
 })
+app.get('/gettweet/:word', (req: Request, resGeneral: Response) => {
+  let searchWord: any
+  searchWord = req.params.word
+  try {
+    const params = { q: searchWord + " since:2011-07-11", count: 3 }
+    const res = newTwit.get('/search/tweets', params, function (error: any, tweets: any, response: Response) {
 
-try {
-  const params = { q: 'banana since:2020-07-11', count: 100 }
-  const res = newTwit.get('/search/tweets', params, function (error:any, tweets: any, response: any) {
-    
-    response.status(200).send(tweets)
-  })
 
-} catch (error) {
-  console.log("nao deu bom")
-}
+      resGeneral.send(tweets)
+    })
 
+  } catch (error) {
+    // console.log(error)
+    resGeneral.send(error)
+  }
+
+
+})
+
+//ServerOn
+const server = app.listen(process.env.PORT || 3003, () => {
+  if (server) {
+    const address = server.address() as AddressInfo;
+    console.log(`Server is running in http://localhost: ${address.port}`);
+  } else {
+    console.error(`Failure upon starting server.`);
+  }
+});
