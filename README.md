@@ -15,4 +15,4 @@ Dúvidas estou a disposição.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Trabalho feito utilizando Node.js e React,
-Primeiramente precisa dar um "npm run start" no servidor chamado "nodeTalker" em seguida Roda-se o react normal (npm run start também)
+Primeiramente precisa dar um "npm install" no NodeTalker e no TwitterSearcher, em seguida "npm run start" no servidor, assim como no twitterSearcher ("npm run start")
