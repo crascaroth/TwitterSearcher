@@ -10,3 +10,9 @@ Você pode escolher a linguagem e o framework que vai usar.
 A solução deve ser entregue via Github/Gitlab ou similar.
 
 Dúvidas estou a disposição.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Trabalho feito utilizando Node.js e React,
+Primeiramente precisa dar um "npm run start" no servidor chamado "nodeTalker" em seguida Roda-se o react normal (npm run start também)
